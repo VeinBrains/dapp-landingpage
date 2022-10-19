@@ -23,7 +23,7 @@ This project uses many tools like:
 Clone repo and access the project directory.
 
 ```bash
-cd veinbrains-frontend
+cd dapp-landingpage
 ```
 
 Install dependencies.
