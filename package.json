@@ -23,7 +23,8 @@
     "react": "^18.2.0",
     "react-daisyui": "^2.4.3",
     "react-dom": "^18.2.0",
-    "soonaverse": "^0.1.14"
+    "soonaverse": "^0.1.14",
+    "vosk-browser": "^0.0.7"
   },
   "devDependencies": {
     "@babel/core": "^7.19.3",

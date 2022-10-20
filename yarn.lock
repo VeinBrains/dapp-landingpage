@@ -6085,6 +6085,11 @@
   "resolved" "https://registry.npmjs.org/util-deprecate/-/util-deprecate-1.0.2.tgz"
   "version" "1.0.2"
 
+"uuid@8.3.2":
+  "integrity" "sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg=="
+  "resolved" "https://registry.npmjs.org/uuid/-/uuid-8.3.2.tgz"
+  "version" "8.3.2"
+
 "v8-to-istanbul@^9.0.1":
   "integrity" "sha512-74Y4LqY74kLE6IFyIjPtkSTWzUZmj8tdHT9Ii/26dvQ6K9Dl2NbEfj0XgU2sHCtKgt5VupqhlO/5aWuqS+IY1w=="
   "resolved" "https://registry.npmjs.org/v8-to-istanbul/-/v8-to-istanbul-9.0.1.tgz"
@@ -6115,6 +6120,13 @@
     "rollup" "~2.78.0"
   optionalDependencies:
     "fsevents" "~2.3.2"
+
+"vosk-browser@^0.0.7":
+  "integrity" "sha512-w022ue5IVwCMTowhc8I/vWrKj3B0bPgOVG3dlwBWENv1mzMaslkpBMeytNmOVDWAKaFycpMAkAREfsrK4569Zg=="
+  "resolved" "https://registry.npmjs.org/vosk-browser/-/vosk-browser-0.0.7.tgz"
+  "version" "0.0.7"
+  dependencies:
+    "uuid" "8.3.2"
 
 "w3c-xmlserializer@^3.0.0":
   "integrity" "sha512-3WFqGEgSXIyGhOmAFtlicJNMjEps8b1MG31NCA0/vOF9+nKMUW1ckhi9cnNHmf88Rzw5V+dwIwsm2C7X8k9aQg=="
