@@ -1,7 +1,9 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { useEffect } from 'react'
 import * as ReactDOM from 'react-dom'
-import Avatar from 'components/Avatar'
-import "../styles/main.css"
+import { Fragment } from 'react'
+
+import '../styles/main.css'
 import {
   BoltIcon,
   ChatBubbleBottomCenterTextIcon,
@@ -9,12 +11,13 @@ import {
   ScaleIcon
 } from '@heroicons/react/24/outline'
 
+import Avatar from 'components/Avatar'
 import { Gradient } from './Gradient'
+
 // import {  } from '@iota/wallet.js'
 // import { Soon } from 'soonaverse'
 // const soon = new Soon(true)
 
-import { Fragment } from 'react'
 import { Popover, Transition } from '@headlessui/react'
 import {
   ArrowPathIcon,
@@ -33,10 +36,12 @@ import {
 } from '@heroicons/react/20/solid'
 
 const navigation = [
-  { name: 'Product', href: '#' },
-  { name: 'Features', href: '#' },
-  { name: 'Marketplace', href: '#' },
-  { name: 'Company', href: '#' }
+  { name: 'Home', href: '#' },
+  { name: 'Ecosystem', href: '/ecosystem' },
+  { name: 'AI Services', href: '/ai_services' },
+  { name: 'Generative Art', href: '/generative_art' },
+  { name: 'Community Spaces', href: '/spaces' },
+  { name: 'iNFTs', href: '/infts' }
 ]
 const features = [
   {
@@ -95,46 +100,9 @@ const blogPosts = [
       href: '#'
     },
     readingLength: '6 min'
-  },
-  {
-    id: 2,
-    title: 'How to use search engine optimization to drive sales',
-    href: '#',
-    date: 'Mar 10, 2020',
-    datetime: '2020-03-10',
-    category: { name: 'Video', href: '#' },
-    imageUrl:
-      'https://images.unsplash.com/photo-1547586696-ea22b4d4235d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80',
-    preview:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit facilis asperiores porro quaerat doloribus, eveniet dolore. Adipisci tempora aut inventore optio animi., tempore temporibus quo laudantium.',
-    author: {
-      name: 'Brenna Goyette',
-      imageUrl:
-        'https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-      href: '#'
-    },
-    readingLength: '4 min'
-  },
-  {
-    id: 3,
-    title: 'Improve your customer experience',
-    href: '#',
-    date: 'Feb 12, 2020',
-    datetime: '2020-02-12',
-    category: { name: 'Case Study', href: '#' },
-    imageUrl:
-      'https://images.unsplash.com/photo-1492724441997-5dc865305da7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80',
-    preview:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint harum rerum voluptatem quo recusandae magni placeat saepe molestiae, sed excepturi cumque corporis perferendis hic.',
-    author: {
-      name: 'Daniela Metz',
-      imageUrl:
-        'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-      href: '#'
-    },
-    readingLength: '11 min'
   }
 ]
+
 const footerNavigation = {
   solutions: [
     { name: 'Marketing', href: '#' },
@@ -162,7 +130,7 @@ const footerNavigation = {
   ],
   social: [
     {
-      name: 'Facebook',
+      name: 'Discord',
       href: '#',
       icon: (
         props: JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>
@@ -216,44 +184,30 @@ const footerNavigation = {
           />
         </svg>
       )
-    },
-    {
-      name: 'Dribbble',
-      href: '#',
-      icon: (
-        props: JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>
-      ) => (
-        <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
-          <path
-            fillRule="evenodd"
-            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10c5.51 0 10-4.48 10-10S17.51 2 12 2zm6.605 4.61a8.502 8.502 0 011.93 5.314c-.281-.054-3.101-.629-5.943-.271-.065-.141-.12-.293-.184-.445a25.416 25.416 0 00-.564-1.236c3.145-1.28 4.577-3.124 4.761-3.362zM12 3.475c2.17 0 4.154.813 5.662 2.148-.152.216-1.443 1.941-4.48 3.08-1.399-2.57-2.95-4.675-3.189-5A8.687 8.687 0 0112 3.475zm-3.633.803a53.896 53.896 0 013.167 4.935c-3.992 1.063-7.517 1.04-7.896 1.04a8.581 8.581 0 014.729-5.975zM3.453 12.01v-.26c.37.01 4.512.065 8.775-1.215.25.477.477.965.694 1.453-.109.033-.228.065-.336.098-4.404 1.42-6.747 5.303-6.942 5.629a8.522 8.522 0 01-2.19-5.705zM12 20.547a8.482 8.482 0 01-5.239-1.8c.152-.315 1.888-3.656 6.703-5.337.022-.01.033-.01.054-.022a35.318 35.318 0 011.823 6.475 8.4 8.4 0 01-3.341.684zm4.761-1.465c-.086-.52-.542-3.015-1.659-6.084 2.679-.423 5.022.271 5.314.369a8.468 8.468 0 01-3.655 5.715z"
-            clipRule="evenodd"
-          />
-        </svg>
-      )
     }
   ]
 }
 
 export default function Example() {
-  
-  const call = ():any => {
-    const gradient = new Gradient();
-    gradient.initGradient('#gradient-canvas');
-  };
+  const call = (): void => {
+    const gradient = new Gradient()
+    gradient.initGradient('#gradient-canvas')
+  }
 
   useEffect(() => {
     call()
-  }, []);
+  }, [])
 
   return (
     <div className="bg-white">
       <div className="relative overflow-hidden">
-        
         <main>
           <div className="relative">
-            <canvas className="absolute" id="gradient-canvas" data-transition-in>
-            </canvas>
+            <canvas
+              className="absolute"
+              id="gradient-canvas"
+              data-transition-in
+            ></canvas>
             <Popover as="header" className="relative">
               <div className="pt-6">
                 <nav
@@ -380,7 +334,9 @@ export default function Example() {
                         <span className="rounded-full bg-gradient-to-r from-teal-500 to-cyan-600 px-3 py-0.5 text-sm font-semibold leading-5 text-white">
                           Alpha
                         </span>
-                        <span className="ml-4 text-sm">Incentivized Testnet</span>
+                        <span className="ml-4 text-sm">
+                          Incentivized Testnet
+                        </span>
                         <ChevronRightIcon
                           className="ml-2 h-5 w-5 text-gray-500"
                           aria-hidden="true"

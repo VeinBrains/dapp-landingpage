@@ -495,7 +495,7 @@ function e(object, propertyName, val) {
 //Gradient object
 class Gradient {
   initGradient(arg0) {
-    throw new Error('Method not implemented.');
+    throw new Error('Method not implemented.')
   }
   constructor(...t) {
     e(this, 'el', void 0),
@@ -529,7 +529,7 @@ class Gradient {
       e(this, 'geometry', void 0),
       e(this, 'minigl', void 0),
       e(this, 'scrollObserver', void 0),
-      e(this, 'amp', 320),
+      e(this, 'amp', 420),
       e(this, 'seed', 5),
       e(this, 'freqX', 14e-5),
       e(this, 'freqY', 29e-5),
