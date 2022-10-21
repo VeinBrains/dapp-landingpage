@@ -8,25 +8,6 @@
  *   https://kevinhufnagl.com
  */
 
-//Converting colors to proper format
-function normalizeColor(hexCode) {
-  return [
-    ((hexCode >> 16) & 255) / 255,
-    ((hexCode >> 8) & 255) / 255,
-    (255 & hexCode) / 255
-  ]
-}
-;['SCREEN', 'LINEAR_LIGHT'].reduce(
-  (hexCode, t, n) =>
-    Object.assign(hexCode, {
-      [t]: n
-    }),
-  {}
-)
-
-//Essential functionality of WebGl
-//t = width
-//n = height
 class MiniGl {
   constructor(canvas, width, height, debug = false) {
     const _miniGl = this,
@@ -494,10 +475,25 @@ function e(object, propertyName, val) {
 
 //Gradient object
 class Gradient {
-  initGradient(arg0) {
+  initGradient(_arg0) {
     throw new Error('Method not implemented.')
   }
+  static normalizeColor(hexCode) {
+    return [
+      ((hexCode >> 16) & 255) / 255,
+      ((hexCode >> 8) & 255) / 255,
+      (255 & hexCode) / 255
+    ]
+  }
+
   constructor(...t) {
+    ;['SCREEN', 'LINEAR_LIGHT'].reduce(
+      (hexCode, t, n) =>
+        Object.assign(hexCode, {
+          [t]: n
+        }),
+      {}
+    )
     e(this, 'el', void 0),
       e(this, 'cssVarRetries', 0),
       e(this, 'maxCssVarRetries', 200),
@@ -859,12 +855,12 @@ class Gradient {
         return hex && `0x${hex.substr(1)}`
       })
       .filter(Boolean)
-      .map(normalizeColor)
+      .map(this.normalizeColor)
   }
 }
 
 /*
- *Finally initializing the Gradient class, assigning a canvas to it and calling Gradient.connect() which initializes everything,
+ * Finally initializing the Gradient class, assigning a canvas to it and calling Gradient.connect() which initializes everything,
  * Use Gradient.pause() and Gradient.play() for controls.
  *
  * Here are some default property values you can change anytime:

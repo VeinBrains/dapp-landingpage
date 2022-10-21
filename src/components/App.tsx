@@ -19,6 +19,7 @@ import { Gradient } from './Gradient'
 // const soon = new Soon(true)
 
 import { Popover, Transition } from '@headlessui/react'
+
 import {
   ArrowPathIcon,
   Bars3Icon,
@@ -102,7 +103,6 @@ const blogPosts = [
     readingLength: '6 min'
   }
 ]
-
 const footerNavigation = {
   solutions: [
     { name: 'Marketing', href: '#' },
@@ -191,6 +191,10 @@ const footerNavigation = {
 export default function Example() {
   const call = (): void => {
     const gradient = new Gradient()
+    gradient.sectionColors = [
+      Gradient.normalizeColor('21414B'),
+      Gradient.normalizeColor('140C1F')
+    ]
     gradient.initGradient('#gradient-canvas')
   }
 
@@ -343,7 +347,9 @@ export default function Example() {
                         />
                       </a>
                       <h1 className="mt-4 text-4xl font-bold tracking-tight text-white sm:mt-5 sm:text-6xl lg:mt-6 xl:text-6xl">
-                        <span className="block">A better way to</span>
+                        <span className="block">
+                          Unleashing the power of AI for everyone
+                        </span>
                         <span className="block bg-gradient-to-r from-teal-200 to-cyan-400 bg-clip-text pb-3 text-transparent sm:pb-5">
                           ship web apps
                         </span>
